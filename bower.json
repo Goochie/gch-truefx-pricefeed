@@ -1,0 +1,11 @@
+{
+  "name": "nagular",
+  "version": "1.0.0",
+  "dependencies": {
+    "bootstrap": "latest",
+    "angular": "latest",
+    "angular-socket-io": "~0.4.1",
+    "socket.io-client": "~0.9.16",
+    "socket.io": "~0.9.15"
+  }
+}
