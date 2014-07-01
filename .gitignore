@@ -1,4 +1,4 @@
 node_modules
 client/components
 .idea
-fx-price-feed.iml
+fx-price-service.iml
