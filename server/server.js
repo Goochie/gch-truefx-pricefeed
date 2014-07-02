@@ -32,10 +32,10 @@ server.listen(port, function(){
 
 //:::::::: Create fx price server
 var trueFXConfig = {
-    userName:'goochie',
-    password:'DanPorter1',
+    userName:'userName',
+    password:'Password',
     curPairs : 'EUR/CAD,GBP/USD,EUR/JPY,GBP/JPY,GBP/CAD,EUR/AUD',
-    trueFXID : 'goochie:DanPorter1:fxrates:1402866774752'
+    trueFXID : 'trueFXID'
 };
 
 io = io.listen(server);
