@@ -2,3 +2,5 @@ node_modules
 client/components
 .idea
 fx-price-service.iml
+
+server/config/config.js
