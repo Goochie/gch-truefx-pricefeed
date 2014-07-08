@@ -1,13 +1,19 @@
 {
   "name": "starter-node-angular",
-  "main": "server.js",
+  "main": "index",
+  "version": "0.0.1",
+  "description": "FX price service ",
+  "homepage": "https://github.com/Goochie/fx-price-service",
+  "keywords": [
+        "websocket",
+        "socket",
+        "FX",
+        "socket.io",
+    ],
+
   "dependencies": {
-    "express": "~4.0.0",
-    "body-parser": "~1.0.1",
-    "method-override": "^2.0.2",
     "socket.io": "~0.9.16",
     "cheerio": "^0.17.0",
     "request": "^2.36.0",
-    "connect-logger": "0.0.1"
   }
 }
