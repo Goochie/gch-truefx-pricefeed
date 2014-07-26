@@ -4,6 +4,8 @@
  *  TRUE FX price feed ...
  */
 module.exports = function (io,trueFXConfig) {
+
+
     'use strict';
     // ======== Dependencies
     var request = require("request");

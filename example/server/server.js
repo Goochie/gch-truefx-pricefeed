@@ -36,7 +36,6 @@ var trueFXConfig = {
     userName:'userName',
     password:'password',
     curPairs : 'EUR/CAD,GBP/USD,EUR/JPY,GBP/JPY,GBP/AUD,EUR/AUD,USD/JPY,EUR/GBP,USD/CHF,USD/CAD,AUD/USD,AUD/CAD',
-    trueFXID : 'trueFXID'
 };
 
 io = io.listen(server);
