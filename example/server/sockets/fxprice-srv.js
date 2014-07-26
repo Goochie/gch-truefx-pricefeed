@@ -5,6 +5,7 @@
  */
 module.exports = function (io,trueFXConfig) {
 
+    console.log('---------- This is the trueFX branch');
 
     'use strict';
     // ======== Dependencies
