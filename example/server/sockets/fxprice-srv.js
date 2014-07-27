@@ -7,6 +7,21 @@ module.exports = function (io,trueFXConfig) {
 
     console.log('---------- This is the trueFX branch');
 
+    if(!trueFXConfig.hasOwnProperty("userName") && typeof trueFXConfig.userName === "string" ) {
+
+        console.error('Usrename was not defined as part of the trueFXconfig')
+    }
+    if(!trueFXConfig.hasOwnProperty("password") ) {
+
+        console.error('password was not defined as part of the trueFXconfig')
+    }
+    if(!trueFXConfig.hasOwnProperty("curPairs") ) {
+
+        console.error('curPairs was not defined as part of the trueFXconfig')
+    }
+
+
+
     'use strict';
     // ======== Dependencies
     var request = require("request");
