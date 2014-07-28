@@ -5,23 +5,6 @@
  */
 module.exports = function (io,trueFXConfig) {
 
-    console.log('---------- This is the trueFX branch');
-
-    if(!trueFXConfig.hasOwnProperty("userName") && typeof trueFXConfig.userName === "string" ) {
-
-        console.error('Usrename was not defined as part of the trueFXconfig')
-    }
-    if(!trueFXConfig.hasOwnProperty("password") ) {
-
-        console.error('password was not defined as part of the trueFXconfig')
-    }
-    if(!trueFXConfig.hasOwnProperty("curPairs") ) {
-
-        console.error('curPairs was not defined as part of the trueFXconfig')
-    }
-
-
-
     'use strict';
     // ======== Dependencies
     var request = require("request");
@@ -43,6 +26,13 @@ module.exports = function (io,trueFXConfig) {
     var userNotAuthenticated = true;
     var currencyPairs = [];
 
+    if(trueFXConfigIsNotValid()){
+
+        return;
+    }
+
+    authenticateSession();
+
 
     //================================================
     //            SOCKET SETUP
@@ -57,7 +47,6 @@ module.exports = function (io,trueFXConfig) {
                 }, 1000)
 
           }
-
 
         socket.on('disconnect', function () {
             fxServiceYetToBeInitiated = true;
@@ -74,15 +63,12 @@ module.exports = function (io,trueFXConfig) {
 
         if(userNotAuthenticated)authenticateSession();
 
+        console.log(trueFXconfigPath());
+
         request(trueFXconfigPath(), function(error, response, body) {
 
-            if (!error && response.statusCode == 200) {
+            if (!error && response.statusCode === 200) {
 
-                var bodyNoWhitSpace = body.replace(/ /g,'');
-
-                if(bodyNoWhitSpace === 'notauthorized'){
-                    console.error('ERROR Session ID : '+trueFXConfig.trueFXID+' is not authorised');
-                }
 
                 var fxPriceData = updatePrices(body);
                 fxServiceYetToBeInitiated = false;
@@ -104,14 +90,10 @@ module.exports = function (io,trueFXConfig) {
 
     function updatePrices(body){
 
-
-       console.log('updatePrices')
-
         var $;
         $ = cheerio.load(body);
         var priceUpdates = $('table').find('tr').length;
 
-        console.log('priceUpdates : '+priceUpdates) ;
 
         if(priceUpdates === 0 )return  currencyPairs;
 
@@ -255,16 +237,77 @@ module.exports = function (io,trueFXConfig) {
 
         var options = {
             host: priceFeedHost,
-            path: trueFXconfigPath()
+            path: trueFXauthPath()
         };
 
+
+        request(trueFXauthPath(), function(error, response, body) {
+
+
+            if (!error && response.statusCode === 200) {
+
+                var bodyNoWhitSpace = body.replace(/ /g,'');
+                var authorised =  bodyNoWhitSpace.search('notauthorized');
+
+                if(authorised === 0){
+
+                    console.error('ERROR Username or password is wrong and has returned not authorized');
+                    return;
+                }
+
+                userNotAuthenticated = false;
+                trueFXID =  bodyNoWhitSpace;
+
+            }
+            else if(error){
+
+                fxServiceYetToBeInitiated = true;
+                console.error ("There has been en ERROR when requesting prices from  : " + trueFXconfigPath());
+                console.error ("ERROR status code : " + error);
+
+            }
+        })
+
+
+
+    }
+
+    function trueFXauthPath(){
+
+        var truePath = priceFeedHost+'u='+trueFXusername+'&p='+trueFXpassword+'&q='+fxGroup+"&f="+format+"&c="+curPairs;
+
+        return truePath;
     }
 
     function trueFXconfigPath(){
 
-        var truePath = priceFeedHost+'u='+trueFXusername+'&p='+trueFXpassword+'&q='+fxGroup+"&id="+trueFXID+"&f="+format+"&c="+curPairs;
+        var truePath = priceFeedHost+'u='+trueFXusername+'&p='+trueFXpassword+'&q='+fxGroup+"&id="+trueFXID;
 
         return truePath;
+    }
+
+    function trueFXConfigIsNotValid(){
+
+        if(!trueFXConfig.hasOwnProperty("userName") || typeof trueFXConfig.userName !== "string" ) {
+
+            console.error('UserName was not defined or is not a string as part of the trueFXconfig')
+
+            return true;
+        }
+        if(!trueFXConfig.hasOwnProperty("password") || typeof trueFXConfig.password !== "string"  ) {
+
+            console.error('PAssword was not defined or is not a string as part of the trueFXconfig')
+
+            return true;
+        }
+        if(!trueFXConfig.hasOwnProperty("curPairs") || typeof trueFXConfig.curPairs !== "string"  ) {
+
+            console.error('Currency pairs was not defined or is not a string as part of the trueFXconfig')
+
+            return true;
+        }
+
+
     }
 
 };

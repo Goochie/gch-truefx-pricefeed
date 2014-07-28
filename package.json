@@ -8,12 +8,12 @@
         "websocket",
         "socket",
         "FX",
-        "socket.io",
+        "socket.io"
     ],
 
   "dependencies": {
     "socket.io": "~0.9.16",
     "cheerio": "^0.17.0",
-    "request": "^2.36.0",
+    "request": "^2.36.0"
   }
 }
