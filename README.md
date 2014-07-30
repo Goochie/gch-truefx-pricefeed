@@ -27,7 +27,23 @@ http://www.truefx.com/dev/data/TrueFX_MarketDataWebAPI_DeveloperGuide.pdf
 
 (I plan to move this into the fx-price-service module on next release)
 
+
 ## API
+
+- Services are classes and are instantiated with the `new` keyword, use `this` for public methods and variables
+
+```javascript
+function SomeService () {
+    this.someMethod = function () {
+
+    };
+}
+```
+
+**[Back to top](#table-of-contents)**
+
+
+
 
 At this point you will have 
 
