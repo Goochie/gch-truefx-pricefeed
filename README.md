@@ -6,16 +6,13 @@ TrueFX price service hooks into the FREE fx price service offered by [TrueFX](//
 Then emit's' updates to price via web sockets.
 
 
-## Table of Contents
+## Table of Contents1
 
 1. [Set up](#set-up)
 1. [API](#api)
 1. [Services](#services)
 1. [Contributing](#contributing)
 1. [License](#license)
-
-
-
 
 
 ## Set up
