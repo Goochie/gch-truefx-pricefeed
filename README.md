@@ -1,7 +1,25 @@
-fx-price-service
-================
+# TrueFX price service
 
-Node express socket.io fx price service
+
+TrueFX price service hooks into the FREE fx price service offered by [TrueFX](//truefx.com).
+
+
+
+## Table of Contents
+
+1. [Modules](#modules)
+1. [Controllers](#controllers)
+1. [Services](#services)
+1. [Factory](#factory)
+1. [Directives](#directives)
+1. [Filters](#filters)
+1. [Routing resolves](#routing-resolves)
+1. [Publish and subscribe events](#publish-and-subscribe-events)
+1. [Angular wrapper references](#angular-wrapper-references)
+1. [Comment standards](#comment-standards)
+1. [Minification and annotation](#minification-and-annotation)
+
+
 
 Set up
 ================
