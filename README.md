@@ -20,6 +20,7 @@ TrueFX price service hooks into the FREE fx price service offered by [TrueFX](//
 Assumptions : You have node and npm installed
 
 1. You will need to register at http://www.truefx.com/ to get a username and password
+2. socket.io
 
 ### Installation
 
@@ -31,19 +32,28 @@ npm install gch-truefx-priceservice
 
 ### Usage
 
-1. Create trueFXConfig constructor object
+1. Create trueFXConfig constructor object using your username and password from truefx and a delimeted list of currency pairs.
 
-//:::::::: Create fx price server
+```javascript
 var trueFXConfig = {
     userName:'userName',
     password:'Password',
-    curPairs : 'EUR/CAD,GBP/USD,EUR/JPY,GBP/JPY,GBP/CAD,EUR/AUD',
-    trueFXID : 'sessionID'
+    curPairs : 'EUR/CAD,GBP/USD,EUR/JPY,GBP/JPY,GBP/CAD,EUR/AUD'
 };
+```
 
-2. 
+2. Set up your socket server with your http server
 
+```javascript
+var io  = require('socket.io');
+io = io.listen(server);
+```
 
+3. Call the fxprice-srv constructor
+
+```javascript
+require('./sockets/fxprice-srv')(io,trueFXConfig);
+```
 
 ### API
 
