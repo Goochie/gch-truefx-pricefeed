@@ -1,9 +1,7 @@
 # TrueFX price service
 
 
-TrueFX price service hooks into the FREE fx price service offered by [TrueFX](//truefx.com).
-
-Then emit's' updates to price via web sockets.
+TrueFX price service hooks into the FREE fx price service offered by [TrueFX](//truefx.com) and emits price updates on your selected currency pair via web sockets.
 
 
 ## Table of Contents1
@@ -25,14 +23,11 @@ Assumptions : You have node and npm installed
 
 ```javascript
 
-
 npm install gch-truefx-priceservice
 
 ```
 
 **[Back to top](#table-of-contents)**
-
-
 
 
 ## API
