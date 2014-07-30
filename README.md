@@ -75,6 +75,23 @@ Thats it all up and running now just open localhost:8020 to view the price feed
 
 
 
+## Services
+
+- Services are classes and are instantiated with the `new` keyword, use `this` for public methods and variables
+
+```javascript
+function SomeService () {
+    this.someMethod = function () {
+
+    };
+}
+```
+
+**[Back to top](#table-of-contents)**
+
+
+
+
 
 
 
