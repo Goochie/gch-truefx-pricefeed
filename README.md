@@ -7,7 +7,7 @@ TrueFX price service hooks into the FREE fx price service offered by [TrueFX](//
 ## Table of Contents
 
 1. [Set Up](#Set-Up)
-1. [api](#api)
+1. [API](#api)
 1. [Services](#services)
 
 
@@ -28,7 +28,7 @@ http://www.truefx.com/dev/data/TrueFX_MarketDataWebAPI_DeveloperGuide.pdf
 (I plan to move this into the fx-price-service module on next release)
 
 
-## api
+## API
 
 - Services are classes and are instantiated with the `new` keyword, use `this` for public methods and variables
 
