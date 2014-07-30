@@ -99,7 +99,7 @@ The returned object in the payload is an array of symbolVO's ( value objects ). 
 
 ## Demo
 
-Please see the Demo folder for instruction of how to get the demo up and running.
+Please see the Demo folder for instruction on how to get the demo up and running.
 
 ## Contributing
 
