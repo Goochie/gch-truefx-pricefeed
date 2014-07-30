@@ -22,9 +22,7 @@ Assumptions : You have node and npm installed
 2. install the node package from npm via the following command.
 
 ```javascript
-
 npm install gch-truefx-priceservice
-
 ```
 
 **[Back to top](#table-of-contents)**
