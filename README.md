@@ -4,7 +4,7 @@
 TrueFX price service hooks into the FREE fx price service offered by [TrueFX](//truefx.com) and emits price updates on your selected currency pair via web sockets.
 
 
-## Table of Contents1
+## Table of Contents
 
 1. [Implementation](#implementation)
 1. [API](#api)
@@ -29,10 +29,23 @@ Assumptions : You have node and npm installed
 npm install gch-truefx-priceservice
 ```
 
-**[Back to top](#table-of-contents)**
+### Usage
+
+1. Create trueFXConfig constructor object
+
+//:::::::: Create fx price server
+var trueFXConfig = {
+    userName:'userName',
+    password:'Password',
+    curPairs : 'EUR/CAD,GBP/USD,EUR/JPY,GBP/JPY,GBP/CAD,EUR/AUD',
+    trueFXID : 'sessionID'
+};
+
+2. 
 
 
-## API
+
+### API
 
 - You will need 
 
@@ -47,23 +60,6 @@ function SomeService () {
 **[Back to top](#table-of-contents)**
 
 
-
-
-At this point you will have 
-
-Password
-Username
-sessionID
-
-Which will be used to create the FX price feed constructor object
-
-//:::::::: Create fx price server
-var trueFXConfig = {
-    userName:'userName',
-    password:'Password',
-    curPairs : 'EUR/CAD,GBP/USD,EUR/JPY,GBP/JPY,GBP/CAD,EUR/AUD',
-    trueFXID : 'sessionID'
-};
 
 Installation
 ================
