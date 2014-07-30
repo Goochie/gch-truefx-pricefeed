@@ -6,18 +6,22 @@ TrueFX price service hooks into the FREE fx price service offered by [TrueFX](//
 
 ## Table of Contents1
 
-1. [Set up](#set-up)
+1. [Implementation](#implementation)
 1. [API](#api)
 1. [Services](#services)
 1. [Contributing](#contributing)
 1. [License](#license)
 
 
-## Set up
+## Implementation
+
+### Dependencys
 
 Assumptions : You have node and npm installed
 
 1. You will need to register at http://www.truefx.com/ to get a username and password
+
+### Installation
 
 2. install the node package from npm via the following command.
 
@@ -30,7 +34,7 @@ npm install gch-truefx-priceservice
 
 ## API
 
-- Services are classes and are instantiated with the `new` keyword, use `this` for public methods and variables
+- You will need 
 
 ```javascript
 function SomeService () {
