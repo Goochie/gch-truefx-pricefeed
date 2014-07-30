@@ -3,6 +3,8 @@
 
 TrueFX price service hooks into the FREE fx price service offered by [TrueFX](//truefx.com).
 
+Then emit's' updates to price via web sockets.
+
 
 ## Table of Contents
 
@@ -10,15 +12,8 @@ TrueFX price service hooks into the FREE fx price service offered by [TrueFX](//
 1. [API](#api)
 1. [Services](#services)
 
-
-
-
-
-
-
-
-
-
+1. [Contributing](#contributing)
+1. [License](#license)
 
 
 
@@ -27,13 +22,16 @@ TrueFX price service hooks into the FREE fx price service offered by [TrueFX](//
 ## Set up
 
 
-To run this example 
 
 1. You will need to register at http://www.truefx.com/ to get a username and password
 
-2. Once registered you will have to use a REST / HTTP tool such as postman to make your initial request to set up a session ID - please see truefx api docs for more info 
+2. install the node package from npm via the following command.
 
-http://www.truefx.com/dev/data/TrueFX_MarketDataWebAPI_DeveloperGuide.pdf
+```
+
+
+
+**[Back to top](#table-of-contents)**
 
 
 (I plan to move this into the fx-price-service module on next release)
@@ -115,6 +113,35 @@ function SomeService () {
 ```
 
 **[Back to top](#table-of-contents)**
+
+## Contributing
+
+Open an issue first to discuss potential changes/additions.
+
+## License
+
+#### (The MIT License)
+
+Copyright (c) 2014 Todd Motto
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+'Software'), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+        distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+        The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+        THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+        EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+        IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+        TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
 
