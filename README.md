@@ -5,6 +5,9 @@ TrueFX price service hooks into the FREE fx price service offered by [TrueFX](//
 
 
 
+
+
+
 ## Table of Contents
 
 1. [Modules](#modules)
