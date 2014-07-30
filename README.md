@@ -4,28 +4,17 @@
 TrueFX price service hooks into the FREE fx price service offered by [TrueFX](//truefx.com).
 
 
-
-
-
-
 ## Table of Contents
 
-1. [Modules](#modules)
-1. [Controllers](#controllers)
+1. [Set Up](#Set-Up)
+1. [API](#API)
 1. [Services](#services)
-1. [Factory](#factory)
-1. [Directives](#directives)
-1. [Filters](#filters)
-1. [Routing resolves](#routing-resolves)
-1. [Publish and subscribe events](#publish-and-subscribe-events)
-1. [Angular wrapper references](#angular-wrapper-references)
-1. [Comment standards](#comment-standards)
-1. [Minification and annotation](#minification-and-annotation)
 
 
 
-Set up
-================
+
+## Set up
+
 
 To run this example 
 
@@ -37,6 +26,8 @@ http://www.truefx.com/dev/data/TrueFX_MarketDataWebAPI_DeveloperGuide.pdf
 
 
 (I plan to move this into the fx-price-service module on next release)
+
+## API
 
 At this point you will have 
 
