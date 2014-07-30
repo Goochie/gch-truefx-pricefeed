@@ -36,8 +36,8 @@ npm install gch-truefx-priceservice
 
 ```javascript
 var trueFXConfig = {
-    userName:'userName',
-    password:'Password',
+    userName:'trueFXuserName',
+    password:'trueFXPassword',
     curPairs : 'EUR/CAD,GBP/USD,EUR/JPY,GBP/JPY,GBP/CAD,EUR/AUD'
 };
 ```
@@ -57,15 +57,28 @@ require('./sockets/fxprice-srv')(io,trueFXConfig);
 
 ### API
 
-- You will need 
+The following event is emmited from the fx price service
 
 ```javascript
-function SomeService () {
-    this.someMethod = function () {
-
-    };
-}
+socket.emit('fxPriceUpdate', {
+        payload: fxPriceData
+});
 ```
+A client needs to be capturing the `fxPriceUpdate'.
+
+In the demo example angular and the socket.io library is used to handle the event.
+
+```javascript
+        $scope.$on('socket:fxPriceUpdate', function(event, data) {
+
+            $scope.rates  =  data.payload;
+
+        });
+```
+
+### Payload
+
+The returned object in the payload is an array of 
 
 **[Back to top](#table-of-contents)**
 
