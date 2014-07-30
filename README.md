@@ -7,8 +7,6 @@ TrueFX price service hooks into the FREE fx price service offered by [TrueFX](//
 ## Table of Contents
 
 1. [Implementation](#implementation)
-1. [API](#api)
-1. [Services](#services)
 1. [Contributing](#contributing)
 1. [License](#license)
 
@@ -78,55 +76,29 @@ In the demo example angular and the socket.io library is used to handle the even
 
 ### Payload
 
-The returned object in the payload is an array of 
-
-**[Back to top](#table-of-contents)**
-
-
-
-Installation
-================
-
-1. Make sure you have node installed.
-2. Use the command line to CD into the root directory fx-price-service 
-3. run 
- 
-fx-price-service > npm install
-
-This will install all of the node dependencys
-
-4. run
-
-fx-price-service > bower install
-
-This will install all of the client dependencys
-
-5. CD in to the server  directory
-
-fx-price-service\server>
-
-6. Run
-
-fx-price-service\server>node server.js
-
-Thats it all up and running now just open localhost:8020 to view the price feed
-
-
-
-
-## Services
-
-- Services are classes and are instantiated with the `new` keyword, use `this` for public methods and variables
+The returned object in the payload is an array of symbolVO's ( value objects ). Each indivdual VO has the follwoing structure.
 
 ```javascript
-function SomeService () {
-    this.someMethod = function () {
-
-    };
-}
+        {
+            symbol: '',
+            timeStamp: '',
+            bidBig: '',
+            bidPoint: '',
+            offerBig: '',
+            offerPoint: '',
+            high: '',
+            low: '',
+            mid: '',
+            bidBullBear: '' ,
+            offerBullBear: ''
+        };
 ```
 
 **[Back to top](#table-of-contents)**
+
+## Demo
+
+Please see the Demo folder for instruction of how to get the demo up and running.
 
 ## Contributing
 
@@ -136,7 +108,7 @@ Open an issue first to discuss potential changes/additions.
 
 #### (The MIT License)
 
-Copyright (c) 2014 Todd Motto
+Copyright (c) 2014 Bill Gooch
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
