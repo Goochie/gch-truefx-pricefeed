@@ -7,6 +7,7 @@ TrueFX price service hooks into the FREE fx price service offered by [TrueFX](//
 ## Table of Contents
 
 1. [Implementation](#implementation)
+1. [Demo](#demo)
 1. [Contributing](#contributing)
 1. [License](#license)
 
