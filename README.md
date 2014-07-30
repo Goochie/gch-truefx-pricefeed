@@ -11,7 +11,6 @@ Then emit's' updates to price via web sockets.
 1. [Set up](#set-up)
 1. [API](#api)
 1. [Services](#services)
-
 1. [Contributing](#contributing)
 1. [License](#license)
 
@@ -21,20 +20,21 @@ Then emit's' updates to price via web sockets.
 
 ## Set up
 
-
+Assumptions : You have node and npm installed
 
 1. You will need to register at http://www.truefx.com/ to get a username and password
 
 2. install the node package from npm via the following command.
 
+```javascript
+
+npm install gch-truefx-priceservice
+
 ```
-
-
 
 **[Back to top](#table-of-contents)**
 
 
-(I plan to move this into the fx-price-service module on next release)
 
 
 ## API
