@@ -1,64 +1,134 @@
-fx-price-service
-================
+# TrueFX price service
 
-Node express socket.io fx price service
 
-Set up
-================
+TrueFX price service hooks into the FREE fx price service offered by [TrueFX](//truefx.com) and emits price updates on your selected currency pair via web sockets.
 
-To run this example 
+
+## Table of Contents
+
+1. [Implementation](#implementation)
+1. [Demo](#demo)
+1. [Contributing](#contributing)
+1. [License](#license)
+
+
+## Implementation
+
+### Dependencys
+
+Assumptions : You have node and npm installed
 
 1. You will need to register at http://www.truefx.com/ to get a username and password
+2. socket.io
 
-2. Once registered you will have to use a REST / HTTP tool such as postman to make your initial request to set up a session ID - please see truefx api docs for more info 
+### Installation
 
-http://www.truefx.com/dev/data/TrueFX_MarketDataWebAPI_DeveloperGuide.pdf
+2. install the node package from npm via the following command.
 
+```javascript
+npm install gch-truefx-priceservice
+```
 
-(I plan to move this into the fx-price-service module on next release)
+### Usage
 
-At this point you will have 
+1. Create trueFXConfig constructor object using your username and password from truefx and a delimeted list of currency pairs.
 
-Password
-Username
-sessionID
-
-Which will be used to create the FX price feed constructor object
-
-//:::::::: Create fx price server
+```javascript
 var trueFXConfig = {
-    userName:'userName',
-    password:'Password',
-    curPairs : 'EUR/CAD,GBP/USD,EUR/JPY,GBP/JPY,GBP/CAD,EUR/AUD',
-    trueFXID : 'sessionID'
+    userName:'trueFXuserName',
+    password:'trueFXPassword',
+    curPairs : 'EUR/CAD,GBP/USD,EUR/JPY,GBP/JPY,GBP/CAD,EUR/AUD'
 };
+```
 
-Installation
-================
+2. Set up your socket server with your http server
 
-1. Make sure you have node installed.
-2. Use the command line to CD into the root directory fx-price-service 
-3. run 
- 
-fx-price-service > npm install
+```javascript
+var io  = require('socket.io');
+io = io.listen(server);
+```
 
-This will install all of the node dependencys
+3. Call the fxprice-srv constructor
 
-4. run
+```javascript
+require('./sockets/fxprice-srv')(io,trueFXConfig);
+```
 
-fx-price-service > bower install
+### API
 
-This will install all of the client dependencys
+The following event is emmited from the fx price service
 
-5. CD in to the server  directory
+```javascript
+socket.emit('fxPriceUpdate', {
+        payload: fxPriceData
+});
+```
+A client needs to be capturing the `fxPriceUpdate'.
 
-fx-price-service\server>
+In the demo example angular and the socket.io library is used to handle the event.
 
-6. Run
+```javascript
+        $scope.$on('socket:fxPriceUpdate', function(event, data) {
 
-fx-price-service\server>node server.js
+            $scope.rates  =  data.payload;
 
-Thats it all up and running now just open localhost:8020 to view the price feed
+        });
+```
+
+### Payload
+
+The returned object in the payload is an array of symbolVO's ( value objects ). Each indivdual VO has the follwoing structure.
+
+```javascript
+        {
+            symbol: '',
+            timeStamp: '',
+            bidBig: '',
+            bidPoint: '',
+            offerBig: '',
+            offerPoint: '',
+            high: '',
+            low: '',
+            mid: '',
+            bidBullBear: '' ,
+            offerBullBear: ''
+        };
+```
+
+**[Back to top](#table-of-contents)**
+
+## Demo
+
+Please see the Demo folder for instruction on how to get the demo up and running.
+
+## Contributing
+
+Open an issue first to discuss potential changes/additions.
+
+## License
+
+#### (The MIT License)
+
+Copyright (c) 2014 Bill Gooch
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+'Software'), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+        distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+        The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+        THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+        EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+        IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+        TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
 
