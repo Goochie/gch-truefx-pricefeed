@@ -31,10 +31,10 @@ server.listen(port, function(){
 });
 
 //:::::::: Create fx price server
-//V IMPORTANT YOU NEED TO REPLACE userName, password and trueFXID with your own trueFXID info
+//V IMPORTANT YOU NEED TO REPLACE TRUFXUSERNAME, TRUEFXPASSWORD with your own credentials
 var trueFXConfig = {
-    userName:'goochie',
-    password:'DanPorter1',
+    userName:'TRUFXUSERNAME',
+    password:'TRUEFXPASSWORD',
     curPairs : 'EUR/CAD,GBP/USD,EUR/JPY,GBP/JPY,GBP/AUD,EUR/AUD,USD/JPY,EUR/GBP,USD/CHF,USD/CAD,AUD/USD,AUD/CAD',
 };
 
