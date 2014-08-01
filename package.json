@@ -11,7 +11,10 @@
         "FX",
         "socket.io"
     ],
-
+  "repository": {
+        "type": "git",
+        "url": "https://github.com/Goochie/gch-truefx-pricefeed"
+   },
   "dependencies": {
     "socket.io": "~0.9.16",
     "cheerio": "^0.17.0",
