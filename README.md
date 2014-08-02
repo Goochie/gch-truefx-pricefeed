@@ -23,7 +23,7 @@ For more information on the implementation, please read the following article [F
 Assumptions : You have node and npm installed
 
 1. You will need to register at http://www.truefx.com/ to get a username and password
-2. socket.io
+2. socket.io - cheerio - request
 
 ### Installation
 
