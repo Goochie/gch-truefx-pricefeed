@@ -1,0 +1,4 @@
+Demo set up
+
+1. Use the command line or terminal to Cd into the server directory demo/server and run the following command > node server.js
+2. Open your browser at  http://localhost:8080/
