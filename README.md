@@ -3,6 +3,8 @@
 
 TrueFX price service hooks into the FREE fx price service offered by [TrueFX](//truefx.com) and emits price updates on your selected currency pair via web sockets.
 
+For more information on the implementation, please read the follwong article [Full stack part 1: Creating an FX price feed](https://medium.com/html5-ria-full-stack/creating-an-fx-price-feed-370e0f623453) 
+
 
 ## Table of Contents
 
