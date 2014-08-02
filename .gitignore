@@ -1,5 +1,6 @@
 node_modules
 .idea
 gch-truefx-pricefeed.iml
+fx-price-service.iml
 example/server/config/config.js
 example/node_modules
