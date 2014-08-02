@@ -9,7 +9,9 @@
         "websocket",
         "socket",
         "FX",
-        "socket.io"
+        "socket.io",
+        "forex",
+        "truefx"
     ],
   "repository": {
         "type": "git",
