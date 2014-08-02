@@ -3,6 +3,8 @@
 
 TrueFX price service hooks into the FREE fx price service offered by [TrueFX](//truefx.com) and emits price updates on your selected currency pair via web sockets.
 
+For more information on the implementation, please read the following article [Full stack part 1: Creating an FX price feed](https://medium.com/html5-ria-full-stack/creating-an-fx-price-feed-370e0f623453) 
+
 
 ## Table of Contents
 
@@ -13,6 +15,8 @@ TrueFX price service hooks into the FREE fx price service offered by [TrueFX](//
 
 
 ## Implementation
+
+[![NPM](https://nodei.co/npm/gch-truefx-pricefeed.png?downloads=true&stars=true)](https://nodei.co/npm/gch-truefx-pricefeed/)
 
 ### Dependencys
 
@@ -99,7 +103,7 @@ The returned object in the payload is an array of symbolVO's ( value objects ). 
 
 ## Demo
 
-Please see the Demo folder for instruction on how to get the demo up and running.
+Please see the READme in the Demo folder for instruction on how to get the demo up and running.
 
 ## Contributing
 
