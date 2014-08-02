@@ -16,6 +16,8 @@ For more information on the implementation, please read the following article [F
 
 ## Implementation
 
+[![NPM](https://nodei.co/npm/gch-truefx-pricefeed.png?downloads=true&stars=true)](https://nodei.co/npm/gch-truefx-pricefeed/)
+
 ### Dependencys
 
 Assumptions : You have node and npm installed
