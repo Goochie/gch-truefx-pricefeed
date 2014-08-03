@@ -67,9 +67,9 @@ socket.emit('fxPriceUpdate', {
         payload: fxPriceData
 });
 ```
-A client needs to be capturing the `fxPriceUpdate'.
+A client needs to be capturing the `fxPriceUpdate' event.
 
-In the demo example angular and the socket.io library is used to handle the event.
+In the demo example, angular and the socket.io library is used to handle the event.
 
 ```javascript
         $scope.$on('socket:fxPriceUpdate', function(event, data) {
