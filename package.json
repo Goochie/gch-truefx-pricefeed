@@ -8,9 +8,9 @@
   "keywords": [
         "websocket",
         "socket",
-        "FX",
+        "FX","fx","exchange rates",
         "socket.io",
-        "forex",
+        "forex","forex data","forex prices","streaming fx prices","forex quotes",
         "truefx"
     ],
   "repository": {
