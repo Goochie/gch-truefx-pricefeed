@@ -55,7 +55,7 @@ io = io.listen(server);
 3. Call the fxprice-srv constructor
 
 ```javascript
-require('./sockets/fxprice-srv')(io,trueFXConfig);
+     require('gch-truefx-pricefeed')(io,trueFXConfig);
 ```
 
 ### API
